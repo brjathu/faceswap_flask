@@ -21,7 +21,7 @@ def upload():
 
 @app.route('/process', methods=['GET', 'POST'])
 def process():
-    os.system("python faceswap.py  uploads/a.jpg uploads/b.jpg")
+    os.system("sudo /home/brjathu/anaconda3/bin/python faceswap.py  uploads/a.jpg uploads/b.jpg")
     return render_template('process.html')
 
 
