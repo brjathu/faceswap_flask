@@ -49,7 +49,7 @@ import numpy
 
 import sys
 
-PREDICTOR_PATH = "/home/brjathu/Softwares/MirrorS/dlib/shape_predictor_68_face_landmarks.dat"
+PREDICTOR_PATH = "shape_predictor_68_face_landmarks.dat"
 SCALE_FACTOR = 2
 FEATHER_AMOUNT = 15
 
@@ -225,4 +225,4 @@ warped_corrected_im2 = correct_colours(im1, warped_im2, landmarks1)
 
 output_im = im1 * (1.0 - combined_mask) + warped_corrected_im2 * combined_mask
 
-cv2.imwrite('output.jpg', output_im)
+cv2.imwrite('results/output.jpg', output_im)
