@@ -31,4 +31,4 @@ def download():
     return send_from_directory(directory=out, filename="output.jpg")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=80)
