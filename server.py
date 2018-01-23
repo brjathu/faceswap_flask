@@ -21,13 +21,14 @@ def upload():
 
 @app.route('/process', methods=['GET', 'POST'])
 def process():
-    os.system("sudo /home/brjathu/anaconda3/bin/python faceswap.py  uploads/a.jpg uploads/b.jpg")
+    os.system("sudo /home/brjathu/anaconda3/envs/virtualX/bin/python faceswap.py  uploads/a.jpg uploads/b.jpg")
     return render_template('process.html')
 
 
 @app.route('/download', methods=['GET', 'POST'])
 def download():
     out = os.path.join(app.root_path, "results")
+    print(out)
     return send_from_directory(directory=out, filename="output.jpg")
 
 if __name__ == '__main__':
