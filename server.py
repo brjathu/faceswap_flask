@@ -10,6 +10,13 @@ app.config['UPLOADED_PHOTOS_DEST'] = 'uploads/'
 configure_uploads(app, photos)
 
 
+@app.route('/new', methods=['GET', 'POST'])
+def new():
+    os.system("sudo rm uploads/a.jpg")
+    os.system("sudo rm uploads/b.jpg")
+    return render_template('new.html')
+
+
 @app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST' and 'photo' in request.files:
@@ -33,3 +40,4 @@ def download():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=80)
+    # app.run(debug=True)
